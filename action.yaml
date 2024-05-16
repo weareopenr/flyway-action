@@ -36,6 +36,10 @@ inputs:
     description: Allow migrations to run out of order
     required: false
     default: false
+  action:
+    description: Which action flyway will perform (ie. migrate or repair)
+    required: true
+    default: migrate
 runs:
   using: docker
   image: docker://flyway/flyway:9
@@ -50,4 +54,4 @@ runs:
     FLYWAY_PLACEHOLDERS_MARKETPLACESCHEMA: ${{ inputs.marketplaceSchema }}
     FLYWAY_OUT_OF_ORDER: ${{ inputs.outOfOrder }}
   args:
-    - migrate
+    - ${{ inputs.action }}
