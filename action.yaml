@@ -40,6 +40,9 @@ inputs:
     description: Which action flyway will perform (ie. migrate or repair)
     required: true
     default: migrate
+  environment:
+    description: The Openr environment (dev, staging, prod)
+    required: false
 runs:
   using: docker
   image: docker://flyway/flyway:9
@@ -52,6 +55,7 @@ runs:
     FLYWAY_DEFAULT_SCHEMA: ${{ inputs.defaultSchema }}
     FLYWAY_TABLE: ${{ inputs.table }}
     FLYWAY_PLACEHOLDERS_MARKETPLACESCHEMA: ${{ inputs.marketplaceSchema }}
+    FLYWAY_PLACEHOLDERS_ENVIRONMENT: ${{ inputs.environment }}
     FLYWAY_OUT_OF_ORDER: ${{ inputs.outOfOrder }}
   args:
     - ${{ inputs.action }}

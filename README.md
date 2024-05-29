@@ -33,10 +33,11 @@ jobs:
       - run: echo 'testing'
 ```
 
-Currently, it supports `url`, `user`, `password`, `initSql`, `locations`, `table`, `defaultSchema`, `outOfOrder` and the placeholder `marketplaceSchema`. 
-`locations` are default to `filesystem:./sql`, `table` to `flyway_schema_history`, `defaultSchema` to `public`, `outOfOrder` to `false` and `marketplaceSchema` to `marketplace`.
+Currently, it supports `url`, `user`, `password`, `initSql`, `locations`, `table`, `defaultSchema`, `outOfOrder`, `action` and the placeholders `marketplaceSchema` and `environment`. 
+
+`locations` are default to `filesystem:./sql`, `table` to `flyway_schema_history`, `defaultSchema` to `public`, `outOfOrder` to `false`, `action` to migrate and `marketplaceSchema` to `marketplace`.
 
 For details, please check out Flyway [documentation].
 
 [flyway]: https://flywaydb.org/
-[documentation]: https://flywaydb.org/documentation/configuration/parameters/
+[documentation]: https://documentation.red-gate.com/fd/flyway-224919682.html
