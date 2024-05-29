@@ -33,7 +33,7 @@ jobs:
       - run: echo 'testing'
 ```
 
-Currently, it supports `url`, `user`, `password`, `initSql`, `locations`, `table`, `defaultSchema`, `outOfOrder`, `action`, `environment` and the placeholder `marketplaceSchema`. 
+Currently, it supports `url`, `user`, `password`, `initSql`, `locations`, `table`, `defaultSchema`, `outOfOrder`, `action` and the placeholders `marketplaceSchema` and `environment`. 
 
 `locations` are default to `filesystem:./sql`, `table` to `flyway_schema_history`, `defaultSchema` to `public`, `outOfOrder` to `false`, `action` to migrate and `marketplaceSchema` to `marketplace`.
 
