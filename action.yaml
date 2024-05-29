@@ -41,8 +41,8 @@ inputs:
     required: true
     default: migrate
   environment:
-    description: The Openr environment (dev, tech, prod)
-    required: true
+    description: The Openr environment (dev, staging, prod)
+    required: false
 runs:
   using: docker
   image: docker://flyway/flyway:9
