@@ -1,6 +1,6 @@
 # Flyway Action
 
-This action runs [Flyway v9][flyway] to migrate database. It aims to migrate database for testing in workflows.
+This action runs [Flyway v11][flyway] to migrate database. It aims to migrate database for testing in workflows.
 
 ## Usage
 
