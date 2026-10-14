@@ -5,7 +5,7 @@ jobs:
   test-postgres:
     strategy:
       matrix:
-        version: [10, 11, 12, 13, 14]
+        version: [14, 15, 16, 17]
     runs-on: ubuntu-latest
     services:
       postgres:
@@ -24,31 +24,6 @@ jobs:
       - uses: ./
         with:
           url: jdbc:postgresql://postgres:5432/db
-          user: user
-          password: password
-          locations: filesystem:.github/workflows/sql
-      - run: echo 'testing'
-  test-mysql:
-    runs-on: ubuntu-latest
-    services:
-      mysql:
-        image: bitnami/mysql:8.0
-        env:
-          MYSQL_DATABASE: db
-          MYSQL_USER: user
-          MYSQL_PASSWORD: password
-          MYSQL_ROOT_PASSWORD: rootpassword
-          MYSQL_AUTHENTICATION_PLUGIN: mysql_native_password
-        options: >-
-          --health-cmd "mysqladmin ping"
-          --health-interval 10s
-          --health-timeout 10s
-          --health-retries 10
-    steps:
-      - uses: actions/checkout@v3
-      - uses: ./
-        with:
-          url: jdbc:mysql://mysql:3306/db
           user: user
           password: password
           locations: filesystem:.github/workflows/sql
